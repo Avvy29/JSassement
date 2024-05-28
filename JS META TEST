@@ -1,0 +1,54 @@
+/*
+Assessment Requirements
+1. Create a variable to store the number of NFTs. What type of variable should be used?
+2. Define an object within the mintNFT function to hold metadata for NFTs. 
+   The metadata values are passed as parameters to the function. Once the NFT is created, 
+   it is stored in the variable from step 1.
+3. The listNFTs() function will log all NFT metadata to the console (e.g., console.log("Name: " + someNFT.name)).
+4. The getTotalSupply() function should return the total number of NFTs created.
+*/
+
+// Create a variable to store the NFTs
+let nftCollection = [];
+
+// This function takes in values as parameters, creates an NFT object
+// using these parameters for its metadata, and stores it in the above variable.
+function mintNFT(name, clan, rank,  strength, speed, level) {
+    let nft = {
+        name: name,
+        clan: clan,
+        rank: rank,
+        strength: strength,
+        speed: speed,
+        level: level
+    };
+    nftCollection.push(nft);
+}
+
+// Create a loop that goes through the array of NFTs
+// and logs their metadata to the console
+function listNFTs() {
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log("\n\n_ NARUTO NFT CARD  _\n\n");
+        console.log("Name: " + nftCollection[i].name);
+        console.log("Clan: " + nftCollection[i].clan);
+        console.log("Rank: " + nftCollection[i].rank);
+        console.log("Strength: " + nftCollection[i].strength);
+        console.log("Speed: " + nftCollection[i].speed);
+        console.log("Level: " + nftCollection[i].level);
+        console.log("\n\n____* * * * *___\n");
+    }
+}
+
+// Log the total number of NFTs created to the console
+function getTotalSupply() {
+    console.log("Total NFTs Minted So Far: " + nftCollection.length);
+}
+
+// Call your functions below this line
+mintNFT("Naruto Uzumaki", "Uzumaki",  100, 80, 90,1 );
+mintNFT("Sasuke Uchiha", "Uchiha", 90, 85, 85, 1);
+mintNFT("Sakura Haruno", "Haruno",  70, 60, 70, 1);
+mintNFT("Kakashi Hatake", "Hatake", 95, 90, 85, 1);
+listNFTs();
+getTotalSupply();
